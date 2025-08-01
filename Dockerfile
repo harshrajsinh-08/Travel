@@ -1,9 +1,11 @@
 # Use PHP with Apache
 FROM php:8.2-apache
 
-# Install required packages for PostgreSQL extensions
+# Install PostgreSQL client libraries and SSL certs
 RUN apt-get update && apt-get install -y \
     libpq-dev \
+    ca-certificates \
+    && update-ca-certificates \
     && docker-php-ext-install pdo pdo_pgsql pgsql
 
 # Copy project files into container
@@ -15,8 +17,7 @@ WORKDIR /var/www/html/
 # Give permissions for uploads
 RUN mkdir -p uploads && chmod -R 777 uploads
 
-# Enable Apache mod_rewrite (optional but useful)
+# Enable Apache mod_rewrite
 RUN a2enmod rewrite
 
-# Expose port 80
 EXPOSE 80
