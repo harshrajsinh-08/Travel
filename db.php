@@ -1,21 +1,17 @@
 <?php
-$host = "localhost";
-$port = "5432"; 
 $dbname = "traveltales";
 $user = "postgres";
-$pass = ""; 
+$pass = "";
 
-try {
-    $pdo = new PDO(
-        "pgsql:host=$host;port=$port;dbname=$dbname;options='--client_encoding=UTF8'",
-        $user,
-        $pass,
-        [
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-        ]
-    );
-} catch (PDOException $e) {
-    die("Database connection failed: " . $e->getMessage());
+// First, try using Unix socket (default on macOS)
+$conn = @pg_connect("dbname=$dbname user=$user password=$pass");
+
+if (!$conn) {
+    // If Unix socket fails, try TCP on localhost:5432
+    $conn = @pg_connect("host=localhost port=5432 dbname=$dbname user=$user password=$pass");
+}
+
+if (!$conn) {
+    die("Database connection failed: " . pg_last_error());
 }
 ?>
