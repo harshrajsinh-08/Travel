@@ -57,7 +57,7 @@ $userEmail = $_SESSION['user'] ?? null;
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
     <div class="bg-white shadow-lg rounded-xl p-6 text-center">
-      <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400" 
+      <img src="https://images.unsplash.com/photo-1584599255392-3008fb46405f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHBob3RvcyUyMGZvciUyMGZvdW5kZXJzJTIwb2YlMjBjb21wYW55fGVufDB8fDB8fHww" 
            alt="Founder 1" class="h-32 w-32 rounded-full mx-auto mb-4 object-cover border-4 border-orange-500"/>
       <h3 class="text-xl font-bold mb-2">Harshrajsinh Zala</h3>
       <p class="text-gray-600">Founder & Lead Developer</p>
