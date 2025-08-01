@@ -1,0 +1,16 @@
+{
+    "name": "traveltales/app",
+    "description": "a blogging and exploration app",
+    "autoload": {
+        "psr-4": {
+            "Traveltales\\App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Harshrajsinh Zala",
+            "email": "harshrajsinhz1684@gmail.com"
+        }
+    ],
+    "require": {}
+}
