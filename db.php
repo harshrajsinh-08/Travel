@@ -1,9 +1,9 @@
 <?php
-$host = "localhost";
-$port = "5432"; 
-$dbname = "traveltales";
-$user = "postgres";
-$pass = ""; 
+$host = "localhost";  // Localhost for local DB
+$port = "5432";       // Default PostgreSQL port
+$dbname = "traveltales";  // Your local DB name
+$user = "postgres";       // Default local user
+$pass = "";  // Replace with your local PostgreSQL password
 
 try {
     $pdo = new PDO(
